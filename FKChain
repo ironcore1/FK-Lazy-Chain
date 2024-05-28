@@ -12,8 +12,8 @@ controls = []
 for control_selected in controllerSelected:
 
     controls.append(control_selected)
-    #check the outliner and grab all transform nodes
     children = pm.listRelatives(control_selected, allDescendents=True, type ='transform')
+   
 
     for child in children:
         stchild = str(child)
@@ -26,6 +26,6 @@ sortedControls = controls.sort()
 pm.select(controls)
 
 if len(controls) > 0:
-    print "you have {} selected".format(len(controls))
+    print ("you have {} selected".format(len(controls)))
 else:
-    print "you have no selection"
+    print ("you have no selection")
